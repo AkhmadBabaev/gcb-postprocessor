@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  gcb-postprocessor:
+      container_name: gcb-postprocessor
+      build: .
+      environment:
+        - AUTH_TOKEN=${AUTH_TOKEN}
+        - PORT=3432
+        - NODE_ENV=%%NODE_ENV%%
+      ports:
+        - "0.0.0.0:3432:3432"
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+          max-file: "20"
+      #    volumes:
+      #      - ./:/var/app
+      restart: always
+
+networks:
+  default:
+    external:
+      name: skynet
