@@ -9,6 +9,7 @@ export class PostProcessorController {
   @Post('/')
   @UseGuards(AuthTokenGuard)
   main(@Body() body: any) {
+    console.log('Request body:', body)
     return this.postProcessorService.main(
       body.originalText,
       body.correctedText,

@@ -1,4 +1,4 @@
-export async function mock(text1: string, text2: string): Promise<{
+export async function postProcessorMethod(text1: string, text2: string): Promise<{
   highlights: Array<{
     id: number;
     from: number;

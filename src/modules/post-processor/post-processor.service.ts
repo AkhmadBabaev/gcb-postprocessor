@@ -1,13 +1,11 @@
-import { Injectable } from '@nestjs/common';
-import { mock } from './mock';
+import { Injectable, OnModuleInit } from '@nestjs/common';
+
+const postProcessorMethodPathEnvField = 'POST_PROCESSOR_METHOD_FILE';
+const postProcessorMethodPathDefault = './post-processor.method';
 
 @Injectable()
-export class PostProcessorService {
+export class PostProcessorService implements OnModuleInit {
   private postProcessor;
-
-  constructor() {
-    this.postProcessor = mock;
-  }
 
   async main(
     originalText: string,
@@ -28,5 +26,14 @@ export class PostProcessorService {
       correctedText,
     );
     return processed;
+  }
+
+  async onModuleInit() {
+    const postProcessorMethodPath =
+      process.env[postProcessorMethodPathEnvField] ||
+      postProcessorMethodPathDefault;
+    this.postProcessor = (
+      await import(postProcessorMethodPath)
+    ).postProcessorMethod;
   }
 }
