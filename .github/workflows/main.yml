@@ -15,9 +15,9 @@ jobs:
     needs: test
     steps:
       - name: Stop and remove containers, networks
-        run: docker-compose down
+        run: docker-compose down ;
       - name: Remove unused data
-        run: docker stop gcb-postprocessor && docker rm gcb-postprocessor
+        run: docker stop gcb-postprocessor ; docker rm gcb-postprocessor ;
   deploy:
     runs-on: self-hosted
     needs: prepare-environment
