@@ -1,5 +1,9 @@
 name: Deploy buy runner
 
+env:
+  AUTH_TOKEN: ${AUTH_TOKEN}
+  POST_PROCESSOR_METHOD_FILE_SOURCE: ${POST_PROCESSOR_METHOD_FILE_SOURCE}
+
 on:
   push:
     branches: [ "master" ]
