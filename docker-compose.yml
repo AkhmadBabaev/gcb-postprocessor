@@ -8,6 +8,7 @@ services:
         - AUTH_TOKEN=${AUTH_TOKEN}
         - PORT=3432
         - NODE_ENV=%%NODE_ENV%%
+        - POST_PROCESSOR_METHOD_FILE_SOURCE=${POST_PROCESSOR_METHOD_FILE_SOURCE}
       ports:
         - "0.0.0.0:3432:3432"
       logging:
