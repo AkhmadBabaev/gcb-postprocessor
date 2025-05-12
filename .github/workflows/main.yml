@@ -28,6 +28,10 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
+      - name: pwd
+        run: pwd
+      - name: ll
+        run: ls -la
       - name: copy postprocessor
         run: cp ${POST_PROCESSOR_METHOD_FILE_SOURCE} ./src/post-processor/
       - name: docker compose
