@@ -29,6 +29,6 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v3
       - name: copy postprocessor
-        run: cp ${POST_PROCESSOR_METHOD_FILE_SOURCE} .
+        run: cp ${POST_PROCESSOR_METHOD_FILE_SOURCE} ./src/post-processor/
       - name: docker compose
         run: docker compose up -d
