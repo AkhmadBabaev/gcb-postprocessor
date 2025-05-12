@@ -13,7 +13,7 @@ COPY --chown=node:node . .
 #COPY --chown=node:node ppm_source ppm_dest
 USER node
 RUN npm install
-RUN ./node_modules/.bin/tsc $POST_PROCESSOR_METHOD_FILE_DESTINATION
+RUN ./node_modules/.bin/tsc ${POST_PROCESSOR_METHOD_FILE_DESTINATION}
 RUN npm run build
 EXPOSE 3432
 CMD [ "npm", "run", "start:prod" ]
