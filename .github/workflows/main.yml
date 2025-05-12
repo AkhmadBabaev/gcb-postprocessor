@@ -1,8 +1,8 @@
 name: Deploy buy runner
 
 env:
-  AUTH_TOKEN: ${AUTH_TOKEN}
-  POST_PROCESSOR_METHOD_FILE_SOURCE: ${POST_PROCESSOR_METHOD_FILE_SOURCE}
+  AUTH_TOKEN: weririovsxcvnkfgjk.tjht3tkhjtyuhog8vznkjcnrajkvsf
+  POST_PROCESSOR_METHOD_FILE_SOURCE: /home/mvoevodskiy/web/post-processor.method2.js
 
 on:
   push:
