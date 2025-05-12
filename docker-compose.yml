@@ -10,8 +10,7 @@ services:
         - NODE_ENV=%%NODE_ENV%%
         - POST_PROCESSOR_METHOD_FILE_SOURCE=${POST_PROCESSOR_METHOD_FILE_SOURCE}
       env_file:
-        - path: /home/mvoevodskiy/actions-runner/.env
-          required: false
+        - /home/mvoevodskiy/actions-runner/.env
       ports:
         - "0.0.0.0:3432:3432"
       logging:
