@@ -25,5 +25,5 @@ services:
 
 networks:
   default:
-    external:
-      name: skynet
+    name: skynet
+    external: true
