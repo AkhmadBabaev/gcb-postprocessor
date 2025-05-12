@@ -2,9 +2,9 @@ FROM node:22-bookworm
 ENV PORT=3432
 ENV AUTH_TOKEN=""
 
-ENV POST_PROCESSOR_METHOD_FILE=./post-processor-real.method.ts
-ENV POST_PROCESSOR_METHOD_FILE_DESTINATION=/var/app/src/post-processor/post-processor-real.method.ts
-ENV POST_PROCESSOR_METHOD_FILE_SOURCE=./post-processor.method2.ts
+ARG POST_PROCESSOR_METHOD_FILE=./post-processor-real.method.ts
+ARG POST_PROCESSOR_METHOD_FILE_DESTINATION=/var/app/src/post-processor/post-processor-real.method.ts
+ARG POST_PROCESSOR_METHOD_FILE_SOURCE=./post-processor.method2.ts
 
 RUN mkdir -p /var/app/node_modules && chown -R node:node /var/app
 WORKDIR /var/app
