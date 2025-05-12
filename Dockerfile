@@ -9,7 +9,7 @@ ARG POST_PROCESSOR_METHOD_FILE_SOURCE=./post-processor.method2.ts
 RUN mkdir -p /var/app/node_modules && chown -R node:node /var/app
 WORKDIR /var/app
 COPY --chown=node:node . .
-COPY --chown=node:node $POST_PROCESSOR_METHOD_FILE_SOURCE $POST_PROCESSOR_METHOD_FILE_DESTINATION
+#COPY --chown=node:node $POST_PROCESSOR_METHOD_FILE_SOURCE $POST_PROCESSOR_METHOD_FILE_DESTINATION
 #COPY --chown=node:node ppm_source ppm_dest
 USER node
 RUN npm install
