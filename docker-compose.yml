@@ -6,7 +6,7 @@ services:
       build:
         args:
           - POST_PROCESSOR_METHOD_FILE_SOURCE=${POST_PROCESSOR_METHOD_FILE_SOURCE}
-        dockerfile: .
+        dockerfile: ./Dockerfile
       environment:
         - AUTH_TOKEN=${AUTH_TOKEN}
         - PORT=3432
