@@ -33,6 +33,6 @@ jobs:
       - name: ll
         run: ls -la
       - name: copy postprocessor
-        run: cp ${POST_PROCESSOR_METHOD_FILE_SOURCE} ./src/modules/post-processor/
+        run: cp ${POST_PROCESSOR_METHOD_FILE_SOURCE} ./src/modules/post-processor/post-processor-real.method.ts
       - name: docker compose
         run: docker compose up -d
