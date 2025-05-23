@@ -1,4 +1,4 @@
-name: Deploy buy runner
+name: Deploy dev
 
 env:
   AUTH_TOKEN: weririovsxcvnkfgjk.tjht3tkhjtyuhog8vznkjcnrajkvsf
