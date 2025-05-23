@@ -1,0 +1,38 @@
+name: Deploy dev
+
+env:
+  AUTH_TOKEN: weririovsxcvnkfgjk.tjht3tkhjtyuhog8vznkjcnrajkvsf
+  POST_PROCESSOR_METHOD_FILE_SOURCE: /home/mvoevodskiy/web/post-processor.method2.ts
+
+on:
+  push:
+    branches: [ "release" ]
+
+jobs:  
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+  prepare-environment:
+    runs-on: self-hosted
+    needs: test
+    steps:
+      - name: Stop and remove containers, networks
+        run: docker-compose down ;
+      - name: Remove unused data
+        run: /bin/bash -c "/usr/bin/docker stop gcb-postprocessor ; /usr/bin/docker rm gcb-postprocessor; " || true
+  deploy:
+    runs-on: self-hosted
+    needs: prepare-environment
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: pwd
+        run: pwd
+      - name: ll
+        run: ls -la
+      - name: copy postprocessor
+        run: cp ${POST_PROCESSOR_METHOD_FILE_SOURCE} ./src/modules/post-processor/post-processor-real.method.ts
+      - name: docker compose
+        run: docker compose up -d
