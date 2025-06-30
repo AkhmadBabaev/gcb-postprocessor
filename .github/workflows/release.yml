@@ -1,8 +1,8 @@
-name: Deploy dev
+name: Deploy release
 
 env:
   AUTH_TOKEN: weririovsxcvnkfgjk.tjht3tkhjtyuhog8vznkjcnrajkvsf
-  POST_PROCESSOR_METHOD_FILE_SOURCE: /home/mvoevodskiy/web/post-processor.method2.ts
+  POST_PROCESSOR_METHOD_FILE_SOURCE: /home/deployer/web/post-processor.method2.ts
 
 on:
   push:
