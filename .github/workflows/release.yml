@@ -21,7 +21,7 @@ jobs:
       - name: Stop and remove containers, networks
         run: docker-compose down ;
       - name: Remove unused data
-        run: /bin/bash -c "/usr/bin/docker stop gcb-postprocessor ; /usr/bin/docker rm gcb-postprocessor; " || true
+        run: /bin/bash -c "/usr/bin/docker stop gcb-postprocessor ; /usr/bin/docker rm gcb-postprocessor; /usr/bin/docker image rm gcb-postprocessor-gcb-postprocessor; " || true
   deploy:
     runs-on: prod
     needs: prepare-environment
