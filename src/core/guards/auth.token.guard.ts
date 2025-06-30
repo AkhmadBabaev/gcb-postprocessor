@@ -19,7 +19,7 @@ export class AuthTokenGuard implements CanActivate {
 
   async validateRequest(request) {
     // console.log('Does user exist. Request body:', request.body);
-    const token = await request.headers.authorizationDockerfile;
+    const token = await request.headers.authorization;
     console.log(
       'Auth.Token.Guard. Provided token:',
       token,
