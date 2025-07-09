@@ -1,7 +1,7 @@
 name: Deploy dev
 
 env:
-  POST_PROCESSOR_METHOD_FILE_SOURCE: /home/mvoevodskiy/web/post-processor.method2.ts
+  POST_PROCESSOR_METHOD_FILE_SOURCE: /home/mvoevodskiy/web/post-processor.method.ts
 
 on:
   push:
